@@ -12,8 +12,15 @@ var {
 var panhandling = React.createClass({
 
   _styles: {},
-  _previousLeft: 40,
+  _previousLeft: 150,
   _previousTop: 100,
+
+  getInitialState: function () {
+    return {
+      x: this._previousLeft,
+      y: this._previousTop
+    }
+  },
 
   componentWillMount: function () {
 
@@ -26,7 +33,7 @@ var panhandling = React.createClass({
           onPanResponderMove: (evt, gestureState) => this.move(gestureState),
           onPanResponderTerminationRequest: (evt, gestureState) => true,
           onPanResponderRelease: (evt, gestureState) => this.end(gestureState),
-          onPanResponderTerminate: (evt, gestureState) => console.log('start'),
+          onPanResponderTerminate: (evt, gestureState) => console.log('end'),
           onShouldBlockNativeResponder: (evt, gestureState) => true
       });
   },
@@ -34,6 +41,7 @@ var panhandling = React.createClass({
   _updatePosition: function() {
 
     this._root && this._root.setNativeProps(this._styles);
+    this._root && this.setState({x:this._styles.left, y:this._styles.top});
   },
 
   move(gestureState) {
@@ -54,6 +62,7 @@ var panhandling = React.createClass({
     return (
       <View style={styles.container}>
         <View ref={component => this._root = component} style={styles.circle} {...this._panResponder.panHandlers} />
+        <Text style={styles.xcoords}>x:{this.state.x}</Text><Text style={styles.ycoords}>y:{this.state.y}</Text>
       </View>
     );
   }
@@ -63,9 +72,9 @@ var styles = StyleSheet.create({
   circle: {
     position: 'absolute',
     top: 100,
-    left: 40,
-    width: 300,
-    height: 300,
+    left: 150,
+    width: 75,
+    height: 75,
     backgroundColor: '#ffeeff',
     borderColor: 'black',
     borderWidth: 1
@@ -74,6 +83,16 @@ var styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  xcoords: {
+    position: 'absolute',
+    top: 500,
+    left: 140
+  },
+  ycoords: {
+    position: 'absolute',
+    top: 500,
+    left: 200
   }
 });
 
