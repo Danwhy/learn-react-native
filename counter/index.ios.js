@@ -10,7 +10,7 @@ var {
   View
 } = React;
 
-var testing = React.createClass({
+var counter = React.createClass({
 
   render: function() {
 
