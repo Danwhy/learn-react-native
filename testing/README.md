@@ -38,6 +38,26 @@ For testing, we'll be using React's RCTTestRunner. This isn't one of the standar
 
 Now, in your '.m' file, you can `#import <RCTTest/RCTTestRunner.h>`.
 
+## Setting preprocessor macros in Xcode
+
+In the React RCTTestRunner library it notes that we should
+```
+* Add this to your test target's gcc preprocessor macros:
+ *
+ *   FB_REFERENCE_IMAGE_DIR="\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\""
+ ```
+ To do this, click on your project in the left bar, then click this button:
+
+ ![](http://i.imgur.com/C4N6MsR.png?1)
+
+and in targets, choose your test file.
+
+Then select Build Settings, and find the heading 'Apple LLVM 7.0 - Preprocessing'.
+
+Then add `FB_REFERENCE_IMAGE_DIR="\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\""` to the Debug preprocessor macro.
+
+
+
 Test component
 
 Individual tests
