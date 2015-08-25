@@ -1,10 +1,5 @@
 # Setting up the Testing environment for a React-Native Project
 
-
-###Create a React component to act as Test Runner
-
-
-
 ##Creating test classes and methods ('.m' file)
 
 In the test target are the test classes containing test methods. Each test class can have multiple test methods.  The test navigator in XCode shows the test classes and test methods in a hierarchical list.
@@ -129,7 +124,3 @@ and in targets, choose your test file.
 Then select Build Settings, and find the heading 'Apple LLVM 7.0 - Preprocessing'.
 
 Then add `FB_REFERENCE_IMAGE_DIR="\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\""` to the Debug preprocessor macro.
-
-
-
-Snapshot Tests
