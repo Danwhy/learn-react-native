@@ -1,8 +1,5 @@
-#Setting up the Testing environment for a React-Native Project
+# Setting up the Testing environment for a React-Native Project
 
-##Setting up a new react-native project
-
-Importing libraries
 
 ###Create a React component to act as Test Runner
 
@@ -104,7 +101,34 @@ Example implementation:
 
 Within the React Test Runner component the `RCTTestModule` is exported to JS as `NativeModules.TestModule` so the individual tests are written in JavaScript. Each test must call `TestModule.markTestCompleted()`` when completed, otherwise the test will timeout and fail.
 
-###Individual tests
+
+## Importing libraries
+
+For testing, we'll be using React's RCTTestRunner. This isn't one of the standard libraries included in Xcode, so to use it in our '.m' file, we'll have to import it as described in [this guide](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#content).  
+* First, find the xcodeproj in the RCTTestRunner directory (inside react-native in your node_modules). Then drag, this file into the libraries folder of your project in Xcode.
+* Next, open the RCTTestRunner.xcodeproj, then its Products folder, in the left bar of Xcode, and Build Phases in the main window.
+* Then, drag libRCTTest.a into the 'Link Binary With Libraries' list.
+* Finally, open the Build Settings of your project, find the Search Paths section, and add `$(SRCROOT/node_modules/react-native/Libraries/RCTTestRunner)`. Set this to recursive.
+
+Now, in your '.m' file, you can `#import <RCTTest/RCTTestRunner.h>`.
+
+## Setting preprocessor macros in Xcode
+
+In the React RCTTestRunner library it notes that we should
+```
+* Add this to your test target's gcc preprocessor macros:
+ *
+ *   FB_REFERENCE_IMAGE_DIR="\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\""
+ ```
+ To do this, click on your project in the left bar, then click this button:
+
+ ![](http://i.imgur.com/C4N6MsR.png?1)
+
+and in targets, choose your test file.
+
+Then select Build Settings, and find the heading 'Apple LLVM 7.0 - Preprocessing'.
+
+Then add `FB_REFERENCE_IMAGE_DIR="\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\""` to the Debug preprocessor macro.
 
 
 
