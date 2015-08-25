@@ -121,6 +121,6 @@ In the React RCTTestRunner library it notes that we should
 
 and in targets, choose your test file.
 
-Then select Build Settings, and find the heading 'Apple LLVM 7.0 - Preprocessing'.
+Then select Build Settings, and find the heading **Apple LLVM 7.0 - Preprocessing**.
 
 Then add `FB_REFERENCE_IMAGE_DIR="\"$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages\""` to the Debug preprocessor macro.
