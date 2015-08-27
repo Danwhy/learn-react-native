@@ -10,8 +10,6 @@
  */
 'use strict';
 
-require('regenerator/runtime');
-
 var React = require('react-native');
 
 var {
@@ -25,6 +23,8 @@ var {
 
 var TESTS = [
   require('./exampletest.js'),
+  require('./SnapTest.js'),
+  require('./IntegrationTestHarnessTest.js'),
 ];
 
 TESTS.forEach(
@@ -39,7 +39,6 @@ var IntegrationTestsApp = React.createClass({
   },
   render: function() {
 
-    console.log('FFFF',NativeModules);
     if (this.state.test) {
       return (
         <ScrollView>

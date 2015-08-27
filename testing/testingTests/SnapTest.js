@@ -10,22 +10,24 @@ var {
   NativeModules,
 } = React;
 
-var { TestModule } = React.addons;
+var TestModule = NativeModules.TestModule;
 
-var Test = React.createClass({
+var SnapTest = React.createClass({
 
   componentDidMount: function () {
 
-    this.done(true);
+    if (!TestModule.verifySnapshot) {
+      throw new Error('TestModule.verifySnapshot not defined.');
+    }
+    requestAnimationFrame(() => TestModule.verifySnapshot(this.done));
   },
 
   done: function(success) {
-    console.log(TestModule);
-    TestModule.markTestPassed(false);
+    TestModule.markTestPassed(success);
   },
 
   render: function () {
-    console.log('TESTING1');
+    console.log('TESTING2', TestModule);
     return (
       <View style={styles.container}>
         <View style={styles.square} />
@@ -37,11 +39,11 @@ var Test = React.createClass({
 var styles = StyleSheet.create({
   square: {
     position: 'absolute',
-    top: 100,
-    left: 40,
+    top: 250,
+    left: 50,
     width: 100,
     height: 100,
-    backgroundColor: '#ffeeff',
+    backgroundColor: 'blue',
   },
   container: {
     flex: 1,
@@ -50,6 +52,6 @@ var styles = StyleSheet.create({
   }
 });
 
-Test.displayName = 'Test';
+SnapTest.displayName = 'SnapTest';
 
-module.exports = Test;
+module.exports = SnapTest;

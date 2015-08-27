@@ -22,23 +22,33 @@
 
   NSOperatingSystemVersion version = [[NSProcessInfo processInfo] operatingSystemVersion];
   RCTAssert(version.majorVersion == 8 || version.minorVersion >= 3, @"Tests should be run on iOS 8.3+, found %zd.%zd.%zd", version.majorVersion, version.minorVersion, version.patchVersion);
-  _runner = RCTInitRunnerForApp(@"testing/testingTests/IntegrationTests.js", nil);
+  _runner = RCTInitRunnerForApp(@"testing/testingTests/IntegrationTests", nil);
 }
 
 #pragma mark Logic Tests
 
-- (void)testTest
+- (void)testTheTester
 {
-  [_runner runTest:_cmd module:@"exampletest"];
+  [_runner runTest:_cmd module:@"IntegrationTestHarnessTest"];
 }
 
-// #pragma mark Snapshot Tests
-//
-// - (void)testFAC
-// {
-//   _runner.recordMode = NO;
-//   [_runner runTest:_cmd module:@"FACTest"];
-// }
+- (void)testTest
+{
+  [_runner runTest:_cmd module:@"Test"];
+}
+
+- (void)testTrue
+{
+  XCTAssertTrue(false);
+}
+
+#pragma mark Snapshot Tests
+
+- (void)testSnap
+{
+  _runner.recordMode = NO;
+  [_runner runTest:_cmd module:@"SnapTest"];
+}
 
 
 @end
