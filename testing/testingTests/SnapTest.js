@@ -15,7 +15,6 @@ var TestModule = NativeModules.TestModule;
 var SnapTest = React.createClass({
 
   componentDidMount: function () {
-
     if (!TestModule.verifySnapshot) {
       throw new Error('TestModule.verifySnapshot not defined.');
     }

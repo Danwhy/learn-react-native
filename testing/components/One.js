@@ -1,6 +1,5 @@
 'use strict';
 
-var style = require('../style/style.js');
 var React = require('react-native');
 var {
   StyleSheet,
@@ -20,6 +19,18 @@ var One = React.createClass({
   }
 });
 
-var styles = StyleSheet.create(style);
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  number: {
+    fontSize: 100,
+    textAlign: 'center',
+    margin: 10,
+  }
+});
 
 module.exports = One;

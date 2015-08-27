@@ -21,7 +21,7 @@
 #endif
 
   NSOperatingSystemVersion version = [[NSProcessInfo processInfo] operatingSystemVersion];
-  RCTAssert(version.majorVersion == 9 || version.minorVersion >= 0, @"Tests should be run on iOS 8.3+, found %zd.%zd.%zd", version.majorVersion, version.minorVersion, version.patchVersion);
+  RCTAssert(version.majorVersion == 8 || version.minorVersion >= 3, @"Tests should be run on iOS 8.3+, found %zd.%zd.%zd", version.majorVersion, version.minorVersion, version.patchVersion);
   _runner = RCTInitRunnerForApp(@"testingTests/IntegrationTests", nil);
 }
 
@@ -58,7 +58,7 @@
 
 - (void)testNav
 {
-  _runner.recordMode = YES;
+  _runner.recordMode = NO;
   [_runner runTest:_cmd module:@"NavTest"];
 }
 
