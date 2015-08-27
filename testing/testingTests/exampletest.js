@@ -20,12 +20,12 @@ var Test = React.createClass({
   },
 
   done: function(success) {
-    console.log(TestModule);
-    TestModule.markTestPassed(true);
+
+    TestModule.markTestPassed(success);
   },
 
   render: function () {
-    console.log('TESTING1');
+
     return (
       <View style={styles.container}>
         <View style={styles.square} />

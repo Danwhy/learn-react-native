@@ -10,9 +10,11 @@ var {
   NativeModules,
 } = React;
 
+var TestComp = require('../index.ios.js');
+
 var TestModule = NativeModules.TestModule;
 
-var SnapTest = React.createClass({
+var SnapperTest = React.createClass({
 
   componentDidMount: function () {
 
@@ -29,29 +31,11 @@ var SnapTest = React.createClass({
   render: function () {
 
     return (
-      <View style={styles.container}>
-        <View style={styles.square} />
-      </View>
+      <TestComp />
     );
   }
 });
 
-var styles = StyleSheet.create({
-  square: {
-    position: 'absolute',
-    top: 250,
-    left: 50,
-    width: 100,
-    height: 100,
-    backgroundColor: 'blue',
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
+SnapperTest.displayName = 'SnapperTest';
 
-SnapTest.displayName = 'SnapTest';
-
-module.exports = SnapTest;
+module.exports = SnapperTest;

@@ -50,4 +50,6 @@ var styles = StyleSheet.create({
   },
 });
 
+module.exports = testing;
+
 AppRegistry.registerComponent('testing', () => testing);

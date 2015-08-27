@@ -50,5 +50,12 @@
   [_runner runTest:_cmd module:@"SnapTest"];
 }
 
+- (void)testSnapper
+{
+  _runner.recordMode = NO;
+  [_runner runTest:_cmd module:@"SnapperTest"];
+}
+
+
 
 @end
