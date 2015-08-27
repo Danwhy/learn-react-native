@@ -25,7 +25,8 @@ var TESTS = [
   require('./exampletest.js'),
   require('./SnapTest.js'),
   require('./IntegrationTestHarnessTest.js'),
-  require('./SnapperTest.js')
+  require('./SnapperTest.js'),
+  require('./navtest.js')
 ];
 
 TESTS.forEach(
