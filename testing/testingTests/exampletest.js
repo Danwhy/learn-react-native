@@ -21,7 +21,7 @@ var Test = React.createClass({
 
   done: function(success) {
     console.log(TestModule);
-    TestModule.markTestPassed(false);
+    TestModule.markTestPassed(true);
   },
 
   render: function () {
