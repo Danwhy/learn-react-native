@@ -1,7 +1,7 @@
 'use strict';
 
 var style = require('./style/style.js');
-var Count = require('./component/Count.js');
+var Count = require('./components/Count.js');
 var React = require('react-native');
 var {
   AppRegistry,

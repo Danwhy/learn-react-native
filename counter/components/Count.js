@@ -1,10 +1,11 @@
 'use strict';
 
-var style = require('./style.js');
+var style = require('../style/style.js');
 var React = require('react-native');
 var {
   Text,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity,
 } = React;
 
 var Count = React.createClass({
@@ -16,7 +17,7 @@ var Count = React.createClass({
     }
   },
   countUp: function() {
-    
+
     this.setState({
       count: this.state.count + 1
     });
@@ -24,9 +25,11 @@ var Count = React.createClass({
   render: function() {
 
     return (
-      <Text style={styles.number} onPress={this.countUp}>
-        {this.state.count}
-      </Text>
+      <TouchableOpacity style={styles.container} onPress={this.countUp}>
+        <Text style={styles.number}>
+          {this.state.count}
+        </Text>
+      </TouchableOpacity>
     );
   }
 });
