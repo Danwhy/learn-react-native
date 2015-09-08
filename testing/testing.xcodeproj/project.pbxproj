@@ -134,8 +134,6 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iOS/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iOS/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		654382C51B8C908700A999A7 /* testing_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testing_Tests.m; sourceTree = "<group>"; };
-		654382C71B8C908700A999A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		654EC8BB1B8C76E300A1E028 /* RCTTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTTest.xcodeproj; path = "node_modules/react-native/Libraries/RCTTest/RCTTest.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -266,15 +264,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		654382C41B8C908700A999A7 /* testing Tests */ = {
-			isa = PBXGroup;
-			children = (
-				654382C51B8C908700A999A7 /* testing_Tests.m */,
-				654382C71B8C908700A999A7 /* Info.plist */,
-			);
-			path = "testing Tests";
-			sourceTree = "<group>";
-		};
 		654EC8BC1B8C76E300A1E028 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,7 +312,6 @@
 				13B07FAE1A68108700A75B9A /* testing */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* testingTests */,
-				654382C41B8C908700A999A7 /* testing Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 			);
 			indentWidth = 2;

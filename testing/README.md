@@ -103,7 +103,7 @@ For testing, we'll be using React's RCTTestRunner. This isn't one of the standar
 * First, find the xcodeproj in the RCTTestRunner directory (inside react-native in your node_modules). Then drag, this file into the libraries folder of your project in Xcode.
 * Next, open the RCTTestRunner.xcodeproj, then its Products folder, in the left bar of Xcode, and Build Phases in the main window.
 * Then, drag libRCTTest.a into the 'Link Binary With Libraries' list.
-* Finally, open the Build Settings of your project, find the Search Paths section, and add `$(SRCROOT/node_modules/react-native/Libraries/RCTTest)`. Set this to recursive.
+* Finally, open the Build Settings of your project, find the Search Paths section, and add `$(SRCROOT)/node_modules/react-native/Libraries/RCTTest`. Set this to recursive.
 
 Now, in your '.m' file, you can `#import <RCTTest/RCTTestRunner.h>`.
 

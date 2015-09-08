@@ -6,3 +6,4 @@ The basics of React-Native
 * Stylesheets
 * Registering Components
 * onPress
+* TouchableOpacity
