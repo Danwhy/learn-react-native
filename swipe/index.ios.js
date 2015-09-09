@@ -8,8 +8,6 @@ var {
   View,
   ListView,
   PanResponder,
-  TouchableHighlight,
-  TouchableOpacity,
 } = React;
 
 var Item = require('./Item.js');
@@ -33,9 +31,9 @@ var swipe = React.createClass({
     };
   },
 
-  pressRow: function(id) {
+  makeDeletable: function(id, deletable) {
 
-    items[id].deletable = !items[id].deletable;
+    items[id].deletable = deletable;
     this.setState({dataSource: this.state.dataSource.cloneWithRows(items)});
   },
 
@@ -46,7 +44,7 @@ var swipe = React.createClass({
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData, sectionID, rowID) => (
-              <Item rowData={rowData} pressHandler={this.pressRow}/>
+              <Item rowData={rowData} pressHandler={this.pressRow} makeDeletable={this.makeDeletable}/>
           )}
           renderSeparator={() => <View style={{backgroundColor: 'grey', height: 1}} />}
         />

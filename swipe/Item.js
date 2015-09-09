@@ -10,6 +10,12 @@ var {
 
 var Item = React.createClass({
 
+  getInitialState: function () {
+    return {
+      itemColor: 'white',
+    }
+  },
+
   componentWillMount: function () {
 
     this._panResponder = PanResponder.create({
@@ -21,7 +27,7 @@ var Item = React.createClass({
           onPanResponderMove: (evt, gestureState) => this.move(gestureState),
           onPanResponderTerminationRequest: (evt, gestureState) => true,
           onPanResponderRelease: (evt, gestureState) => this.end(gestureState),
-          onPanResponderTerminate: (evt, gestureState) => console.log('end'),
+          onPanResponderTerminate: (evt, gestureState) => this.unhighlight(),
           onShouldBlockNativeResponder: (evt, gestureState) => true
       });
   },
@@ -29,23 +35,34 @@ var Item = React.createClass({
   end: function (gestureState) {
 
     this.done = false;
+    this.setState({itemColor: 'white'});
   },
 
   move: function (gestureState) {
 
     if (gestureState.dx >= 100 && !this.done){
-      this.props.pressHandler(this.props.rowData.id);
+      this.props.makeDeletable(this.props.rowData.id, true);
+      this.done = true;
+    } else if (gestureState.dx <= -100 && !this.done) {
+      this.props.makeDeletable(this.props.rowData.id, false);
       this.done = true;
     }
   },
 
   highlight: function () {
 
+    this.setState({itemColor: 'lightgrey'});
+  },
+
+  unhighlight: function () {
+
+    this.setState({itemColor: 'white'});
   },
 
   render: function () {
+
     return (
-      <View style={styles.item} {...this._panResponder.panHandlers}>
+      <View style={[styles.item, {backgroundColor: this.state.itemColor}]} {...this._panResponder.panHandlers}>
         {this.props.rowData.deletable &&
           <View>
             <Text style={styles.x}>X</Text>
