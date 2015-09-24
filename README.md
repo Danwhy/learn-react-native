@@ -6,7 +6,8 @@ A collection of examples/guides to using React-Native.
 [Navigator] (https://github.com/Danwhy/learn-react-native/tree/master/navigator) - The basics of using the Navigator component.  
 [Panhandler] (https://github.com/Danwhy/learn-react-native/tree/master/panhandling) - The basics of gestures and the panResponder.  
 [Testing] (https://github.com/Danwhy/learn-react-native/tree/master/testing) - Setting up a runner to test your app.  
-[Swipe] (https://github.com/Danwhy/learn-react-native/tree/master/swipe) - Using panhandlers and animations to delete list items when you swipe them.
+[Swipe] (https://github.com/Danwhy/learn-react-native/tree/master/swipe) - Using panhandlers and animations to delete list items when you swipe them.  
+[Fetch] (https://github.com/Danwhy/learn-react-native/tree/master/fetch) - Examples of basic fetch GET and POST requests.
 
 First, make sure you have at least version 6.3 of Xcode, and have installed iojs and react native (`npm install -g react-native-cli`).  
 See https://facebook.github.io/react-native/docs/getting-started.html#content for more details.
