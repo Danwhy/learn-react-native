@@ -9,7 +9,7 @@ A collection of examples/guides to using React-Native.
 [Swipe] (https://github.com/Danwhy/learn-react-native/tree/master/swipe) - Using panhandlers and animations to delete list items when you swipe them.  
 [Fetch] (https://github.com/Danwhy/learn-react-native/tree/master/fetch) - Examples of basic fetch GET and POST requests.
 
-First, make sure you have at least version 6.3 of Xcode, and have installed iojs and react native (`npm install -g react-native-cli`).  
+First, make sure you have at least version 6.3 of Xcode, and have installed iojs/node 4 and react native (`npm install -g react-native-cli`).  
 See https://facebook.github.io/react-native/docs/getting-started.html#content for more details.
 
 To run these examples, clone the repo, open the `.xcodeproj` files in xcode, and press the 'run' button.  
